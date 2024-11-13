@@ -8,7 +8,7 @@ from google.colab import drive
 import requests
 
 # URL raw file CSV di GitHub
-url = 'https://raw.githubusercontent.com/username/repository-name/main/predic_tabel.csv'
+url = 'https://github.com/nilatiara/KomputasiPararel/blob/main/predic_tabel.csv'
 
 # Mengunduh dataset dan membaca dengan pandas
 df = pd.read_csv(url)
