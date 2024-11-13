@@ -1,5 +1,3 @@
-
-
 import streamlit as st
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
@@ -7,13 +5,16 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import LabelEncoder
 from google.colab import drive
+import requests
 
-# Mount Google Drive
-drive.mount('/content/drive')
+# URL raw file CSV di GitHub
+url = 'https://raw.githubusercontent.com/username/repository-name/main/predic_tabel.csv'
 
-# Path to dataset in Google Drive
-file_path = '/content/drive/MyDrive/predic_tabel.csv'  # Update this path if necessary
+# Mengunduh dataset dan membaca dengan pandas
+df = pd.read_csv(url)
 
+# Tampilkan dataset di Streamlit
+st.write("Dataset Penyakit Paru", df)
 # Load dataset and sample 50 rows
 data = pd.read_csv(file_path).sample(50, random_state=42)
 
